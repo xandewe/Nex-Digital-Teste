@@ -22,3 +22,4 @@ node server.js
 - jsonwebtoken
 - sequelize-cli
 - dotenv
+- sequelize-paginate
