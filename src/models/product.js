@@ -1,3 +1,5 @@
+const sequelizePaginate = require('sequelize-paginate')
+
 const product = (sequelize, DataTypes) => {
     const Product = sequelize.define('Product', {
         id: {
@@ -33,6 +35,7 @@ const product = (sequelize, DataTypes) => {
         tableName: 'products'
     });
 
+    sequelizePaginate.paginate(Productgiut)
     return Product
 };
 
