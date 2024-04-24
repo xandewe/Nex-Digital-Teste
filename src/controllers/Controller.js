@@ -4,11 +4,13 @@ class Controller {
     }
   
     async get(req, res) {
+      const { page, limit } = req.query 
+      
       try {
-        const list_all = await this.entityService.getAll();
+        const list_all = await this.entityService.getAll(page, limit);
         return res.status(200).json(list_all);
       } catch (erro) {
-        res.status(400).json({error: err.message})
+        res.status(400).json({error: erro.message})
       }
     }
   
