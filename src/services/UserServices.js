@@ -2,6 +2,7 @@ const Services = require('./Services.js');
 const jwt = require('jsonwebtoken')
 const config = require('../config')
 const bcrypt = require('bcrypt');
+const dataSource = require('../models');
 
 const { compare } = bcrypt
 
@@ -16,19 +17,24 @@ class UserServices extends Services {
     }
 
     async signin(email, password) {
-        const user = this.getBy({ email })
+        const user = await dataSource[this.model].findOne({
+            where: {
+              email: email
+            }
+        });
 
         if(user === null){
             throw new Error('Login invalid')
-        }
+        };
 
-        const passIsValid = compare(password, user.password)
+        const passIsValid = await compare(password, user.password);
+
         if (!passIsValid) {
             throw new Error('Login invalid')
-          }
+        };
 
-        const token = this.genToken(user)
-        const { name } = user
+        const token = this.genToken(user);
+        const { name } = user;
         return { token, data: { name, email }};
     }
 }
