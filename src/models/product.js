@@ -13,19 +13,19 @@ const product = (sequelize, DataTypes) => {
         type: DataTypes.DECIMAL,
         allowNull: false
         },
-        value_per: {
+        valuePer: {
         type: DataTypes.ENUM('kg', 'unit'),
         allowNull: false
         },
-        created_at: {
+        createdAt: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW
         },
-        deleted_at: {
+        deletedAt: {
         type: DataTypes.DATE,
         allowNull: true
         },
-        updated_at: {
+        updatedAt: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW
         }
