@@ -1,8 +1,10 @@
-const app = require('./src/app')
 require('dotenv/config');
+const app = require('./src/app')
+const config = require('./src/config')
+const { sequelize } = require('./src/models')
 
-const port = process.env.PORT
-
-app.listen(port, () => {
-    console.log(`App executing in http://localhost:${port}`)
+sequelize.sync().then(() => {
+    app.listen(config.PORT, () => {
+      console.log(`App listening at http://localhost:${config.PORT}`)
+    })
 })
