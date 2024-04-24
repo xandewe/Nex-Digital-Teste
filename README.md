@@ -18,3 +18,7 @@ node server.js
 - Sequelize
 - postgresql
 - nodemon
+- bcrypt
+- jsonwebtoken
+- sequelize-cli
+- dotenv
