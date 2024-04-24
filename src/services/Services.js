@@ -1,14 +1,16 @@
+const dataSource = require('../models');
+
 class Services {
-  constructor(entity) {
-    this.model = entity;
+  constructor(entityName) {
+    this.model = entityName;
   }
 
   async get_all() {
-    return this.model.findAll();
+    return dataSource[this.model].findAll();
   }
 
   async create(payload) {
-    return this.model.create(payload);
+    return dataSource[this.model].create(payload);
   }
 }
 
