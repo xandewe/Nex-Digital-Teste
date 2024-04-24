@@ -10,6 +10,7 @@ class Config {
       this.DATABASE = process.env.DATABASE
       this.DATABASE_USERNAME = process.env.DATABASE_USERNAME
       this.DATABASE_PASSWORD = process.env.DATABASE_PASSWORD
+      this.JWT_SECRET = process.env.JWT_SECRET
     }
   }
   
