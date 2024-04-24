@@ -5,7 +5,7 @@ class Controller {
   
     async get(req, res) {
       try {
-        const list_all = await this.entityService.get_all();
+        const list_all = await this.entityService.getAll();
         return res.status(200).json(list_all);
       } catch (erro) {
         res.status(400).json({error: err.message})

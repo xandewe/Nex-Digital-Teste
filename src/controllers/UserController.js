@@ -28,6 +28,20 @@ class UserController extends Controller {
       res.status(400).json({error: err.message})
     }
   }
+
+  async login(req, res) {
+    const { email, password } = req.body;
+
+    try {
+
+      const { token, user} = await this.entityService.signin(email, password);
+  
+      return res.status(200).json({token: token, data: user});
+  
+    } catch (err) {
+      res.status(401).json({error: err.message})
+    }
+  }
 }
 
 module.exports = UserController;
