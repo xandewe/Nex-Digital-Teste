@@ -5,8 +5,12 @@ class Services {
     this.model = entityName;
   }
 
-  async get_all() {
+  async getAll() {
     return dataSource[this.model].findAll();
+  }
+  
+  async getBy(object) {
+    return dataSource[this.model].findOne({where: { object }});
   }
 
   async create(payload) {
