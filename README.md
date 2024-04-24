@@ -11,6 +11,8 @@ or
 node server.js
 ```
 
+When running the project it will use the CREATE IF NOT EXISTS command and will create the model in the DB automatically
+
 ## TECH
 
 - Node
