@@ -13,6 +13,9 @@ node server.js
 
 When running the project it will use the CREATE IF NOT EXISTS command and will create the model in the DB automatically
 
+## CORS
+API enabled to run only on localhost on port 3000
+
 ## TECH
 
 - Node
