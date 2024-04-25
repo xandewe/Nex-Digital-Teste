@@ -35,7 +35,7 @@ const product = (sequelize, DataTypes) => {
         tableName: 'products'
     });
 
-    sequelizePaginate.paginate(Productgiut)
+    sequelizePaginate.paginate(Product)
     return Product
 };
 
