@@ -16,6 +16,16 @@ When running the project it will use the CREATE IF NOT EXISTS command and will c
 ## CORS
 API enabled to run only on localhost on port 3000
 
+## Rotas
+
+| Rota              | Método |
+|-------------------|--------|
+| /api/users        | POST   |
+| /api/users/login  | POST   |
+| /api/products     | POST   |
+| /api/products     | GET    |
+
+
 ## TECH
 
 - Node
