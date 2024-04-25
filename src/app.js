@@ -31,10 +31,10 @@ const specs = swaggerJSDoc(options);
 const app = express()
 
 const corsOptions = {
-  origin: 'http://localhost'
+  origin: 'http://localhost:3000'
 };
 
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(express.json())
 
 app.get("/api/check", (req, res) => {
