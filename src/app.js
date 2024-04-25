@@ -3,6 +3,7 @@ const config = require('./config')
 const routes = require('./routes')
 const swaggerUi = require('swagger-ui-express');
 const swaggerJSDoc = require('swagger-jsdoc');
+const cors = require('cors')
 
 const options = {
     swaggerDefinition: {
@@ -28,6 +29,12 @@ const options = {
 const specs = swaggerJSDoc(options);
 
 const app = express()
+
+const corsOptions = {
+  origin: 'http://localhost'
+};
+
+app.use(cors(corsOptions))
 app.use(express.json())
 
 app.get("/api/check", (req, res) => {
