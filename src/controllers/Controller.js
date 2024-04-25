@@ -9,8 +9,8 @@ class Controller {
       try {
         const list_all = await this.entityService.getAll(page, limit);
         return res.status(200).json(list_all);
-      } catch (erro) {
-        res.status(400).json({error: erro.message})
+      } catch (err) {
+        res.status(400).json({error: err.message})
       }
     }
   
@@ -19,7 +19,7 @@ class Controller {
       try {
         const create_new = await this.entityService.create(payload);
         return res.status(201).json(create_new);
-      } catch (erro) {
+      } catch (err) {
         res.status(400).json({error: err.message})
       }
     }
